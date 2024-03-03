@@ -1,0 +1,165 @@
+pkg_info {
+  arch: "v1model"
+}
+tables {
+  preamble {
+    id: 35582020
+    name: "MyIngress.get_thresholds"
+    alias: "get_thresholds"
+  }
+  action_refs {
+    id: 21257015
+  }
+  action_refs {
+    id: 32571418
+  }
+  size: 1024
+}
+tables {
+  preamble {
+    id: 45569621
+    name: "MyIngress.ipv4_forward"
+    alias: "ipv4_forward"
+  }
+  match_fields {
+    id: 1
+    name: "hdr.ipv4.dstAddr"
+    bitwidth: 32
+    match_type: EXACT
+  }
+  action_refs {
+    id: 29778084
+  }
+  action_refs {
+    id: 25652968
+  }
+  size: 1024
+}
+actions {
+  preamble {
+    id: 21257015
+    name: "NoAction"
+    alias: "NoAction"
+    annotations: "@noWarn(\"unused\")"
+  }
+}
+actions {
+  preamble {
+    id: 23746210
+    name: "MyIngress.mirror_heavy_flow"
+    alias: "mirror_heavy_flow"
+  }
+}
+actions {
+  preamble {
+    id: 25652968
+    name: "MyIngress.drop"
+    alias: "drop"
+  }
+}
+actions {
+  preamble {
+    id: 32571418
+    name: "MyIngress.get_thresholds_action"
+    alias: "get_thresholds_action"
+  }
+  params {
+    id: 1
+    name: "hh_threshold_param"
+    bitwidth: 32
+  }
+  params {
+    id: 2
+    name: "drop_threshold_param"
+    bitwidth: 32
+  }
+}
+actions {
+  preamble {
+    id: 29778084
+    name: "MyIngress.ipv4_forward_action"
+    alias: "ipv4_forward_action"
+  }
+  params {
+    id: 1
+    name: "port"
+    bitwidth: 9
+  }
+}
+registers {
+  preamble {
+    id: 376501227
+    name: "MyIngress.sketch_row0"
+    alias: "sketch_row0"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 32
+      }
+    }
+  }
+  size: 65536
+}
+registers {
+  preamble {
+    id: 370140462
+    name: "MyIngress.sketch_row1"
+    alias: "sketch_row1"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 32
+      }
+    }
+  }
+  size: 65536
+}
+registers {
+  preamble {
+    id: 382323362
+    name: "MyIngress.sketch_row2"
+    alias: "sketch_row2"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 32
+      }
+    }
+  }
+  size: 65536
+}
+registers {
+  preamble {
+    id: 379223103
+    name: "MyIngress.sketch_row3"
+    alias: "sketch_row3"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 32
+      }
+    }
+  }
+  size: 65536
+}
+registers {
+  preamble {
+    id: 375763841
+    name: "MyIngress.sketch_report"
+    alias: "sketch_report"
+  }
+  type_spec {
+    bitstring {
+      bit {
+        bitwidth: 1
+      }
+    }
+  }
+  size: 65536
+}
+type_info {
+}

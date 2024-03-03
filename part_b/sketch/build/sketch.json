@@ -1,0 +1,3592 @@
+{
+  "header_types" : [
+    {
+      "name" : "scalars_0",
+      "id" : 0,
+      "fields" : [
+        ["tmp", 32, false],
+        ["tmp_0", 32, false],
+        ["tmp_1", 32, false],
+        ["tmp_2", 32, false],
+        ["tmp_3", 32, false],
+        ["tmp_4", 32, false],
+        ["tmp_5", 32, false],
+        ["tmp_6", 32, false],
+        ["tmp_7", 16, false],
+        ["tmp_8", 16, false],
+        ["tmp_9", 8, false],
+        ["tmp_10", 32, false],
+        ["tmp_11", 32, false],
+        ["tmp_12", 16, false],
+        ["tmp_13", 16, false],
+        ["tmp_14", 8, false],
+        ["tmp_15", 32, false],
+        ["tmp_16", 32, false],
+        ["tmp_17", 32, false],
+        ["tmp_18", 32, false],
+        ["tmp_19", 32, false],
+        ["tmp_20", 32, false],
+        ["tmp_21", 32, false],
+        ["tmp_22", 32, false],
+        ["tmp_23", 32, false],
+        ["tmp_24", 32, false],
+        ["tmp_25", 32, false],
+        ["tmp_26", 32, false],
+        ["tmp_27", 32, false],
+        ["tmp_28", 32, false],
+        ["tmp_29", 16, false],
+        ["tmp_30", 16, false],
+        ["tmp_31", 8, false],
+        ["tmp_32", 32, false],
+        ["hh_threshold_0", 32, false],
+        ["drop_threshold_0", 32, false],
+        ["hashTemp1_0", 17, false],
+        ["hashTemp2_0", 17, false],
+        ["srcPort_0", 16, false],
+        ["dstPort_0", 16, false],
+        ["msgTemp_0", 32, false],
+        ["msgTemp_1", 32, false],
+        ["msgTemp_2", 32, false],
+        ["msgTemp_3", 32, false],
+        ["estimate1_0", 32, false],
+        ["estimate2_0", 32, false],
+        ["real_number_0", 32, false],
+        ["packet_state_0", 1, false],
+        ["hashReport_0", 16, false],
+        ["metadata.seed", 32, false],
+        ["_padding_0", 5, false]
+      ]
+    },
+    {
+      "name" : "standard_metadata",
+      "id" : 1,
+      "fields" : [
+        ["ingress_port", 9, false],
+        ["egress_spec", 9, false],
+        ["egress_port", 9, false],
+        ["instance_type", 32, false],
+        ["packet_length", 32, false],
+        ["enq_timestamp", 32, false],
+        ["enq_qdepth", 19, false],
+        ["deq_timedelta", 32, false],
+        ["deq_qdepth", 19, false],
+        ["ingress_global_timestamp", 48, false],
+        ["egress_global_timestamp", 48, false],
+        ["mcast_grp", 16, false],
+        ["egress_rid", 16, false],
+        ["checksum_error", 1, false],
+        ["parser_error", 32, false],
+        ["priority", 3, false],
+        ["_padding", 3, false]
+      ]
+    },
+    {
+      "name" : "ethernet_t",
+      "id" : 2,
+      "fields" : [
+        ["dstAddr", 48, false],
+        ["srcAddr", 48, false],
+        ["etherType", 16, false]
+      ]
+    },
+    {
+      "name" : "ipv4_t",
+      "id" : 3,
+      "fields" : [
+        ["version", 4, false],
+        ["ihl", 4, false],
+        ["diffserv", 8, false],
+        ["totalLen", 16, false],
+        ["identification", 16, false],
+        ["flags", 3, false],
+        ["fragOffset", 13, false],
+        ["ttl", 8, false],
+        ["protocol", 8, false],
+        ["hdrChecksum", 16, false],
+        ["srcAddr", 32, false],
+        ["dstAddr", 32, false]
+      ]
+    },
+    {
+      "name" : "icmp_t",
+      "id" : 4,
+      "fields" : [
+        ["type", 8, false],
+        ["code", 8, false],
+        ["hdrChecksum", 16, false]
+      ]
+    },
+    {
+      "name" : "tcp_t",
+      "id" : 5,
+      "fields" : [
+        ["srcPort", 16, false],
+        ["desPort", 16, false],
+        ["seqNumber", 32, false],
+        ["ackNumber", 32, false],
+        ["headerLen", 4, false],
+        ["reserve", 6, false],
+        ["codeBits", 6, false],
+        ["window", 16, false],
+        ["tcpCheaksum", 16, false],
+        ["urgentPointer", 16, false]
+      ]
+    },
+    {
+      "name" : "udp_t",
+      "id" : 6,
+      "fields" : [
+        ["srcPort", 16, false],
+        ["desPort", 16, false],
+        ["udpLen", 16, false],
+        ["udpChecksum", 16, false]
+      ]
+    }
+  ],
+  "headers" : [
+    {
+      "name" : "scalars",
+      "id" : 0,
+      "header_type" : "scalars_0",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "standard_metadata",
+      "id" : 1,
+      "header_type" : "standard_metadata",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "ethernet",
+      "id" : 2,
+      "header_type" : "ethernet_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "ipv4",
+      "id" : 3,
+      "header_type" : "ipv4_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "icmp",
+      "id" : 4,
+      "header_type" : "icmp_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "tcp",
+      "id" : 5,
+      "header_type" : "tcp_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "udp",
+      "id" : 6,
+      "header_type" : "udp_t",
+      "metadata" : false,
+      "pi_omit" : true
+    }
+  ],
+  "header_stacks" : [],
+  "header_union_types" : [],
+  "header_unions" : [],
+  "header_union_stacks" : [],
+  "field_lists" : [
+    {
+      "id" : 1,
+      "name" : "fl",
+      "elements" : []
+    }
+  ],
+  "errors" : [
+    ["NoError", 0],
+    ["PacketTooShort", 1],
+    ["NoMatch", 2],
+    ["StackOutOfBounds", 3],
+    ["HeaderTooShort", 4],
+    ["ParserTimeout", 5],
+    ["ParserInvalidArgument", 6]
+  ],
+  "enums" : [],
+  "parsers" : [
+    {
+      "name" : "parser",
+      "id" : 0,
+      "init_state" : "start",
+      "parse_states" : [
+        {
+          "name" : "start",
+          "id" : 0,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "ethernet"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x0800",
+              "mask" : null,
+              "next_state" : "parse_ipv4"
+            },
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["ethernet", "etherType"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_ipv4",
+          "id" : 1,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "ipv4"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x11",
+              "mask" : null,
+              "next_state" : "parse_udp"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x06",
+              "mask" : null,
+              "next_state" : "parse_tcp"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x01",
+              "mask" : null,
+              "next_state" : "parse_icmp"
+            },
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["ipv4", "protocol"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_icmp",
+          "id" : 2,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "icmp"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : []
+        },
+        {
+          "name" : "parse_udp",
+          "id" : 3,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "udp"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : []
+        },
+        {
+          "name" : "parse_tcp",
+          "id" : 4,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "tcp"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "default",
+              "value" : null,
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : []
+        }
+      ]
+    }
+  ],
+  "parse_vsets" : [],
+  "deparsers" : [
+    {
+      "name" : "deparser",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "sketch.p4",
+        "line" : 397,
+        "column" : 8,
+        "source_fragment" : "MyDeparser"
+      },
+      "order" : ["ethernet", "ipv4", "icmp", "tcp", "udp"],
+      "primitives" : []
+    }
+  ],
+  "meter_arrays" : [],
+  "counter_arrays" : [],
+  "register_arrays" : [
+    {
+      "name" : "MyIngress.sketch_row0",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "sketch.p4",
+        "line" : 168,
+        "column" : 30,
+        "source_fragment" : "sketch_row0"
+      },
+      "size" : 65536,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "MyIngress.sketch_row1",
+      "id" : 1,
+      "source_info" : {
+        "filename" : "sketch.p4",
+        "line" : 169,
+        "column" : 30,
+        "source_fragment" : "sketch_row1"
+      },
+      "size" : 65536,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "MyIngress.sketch_row2",
+      "id" : 2,
+      "source_info" : {
+        "filename" : "sketch.p4",
+        "line" : 170,
+        "column" : 30,
+        "source_fragment" : "sketch_row2"
+      },
+      "size" : 65536,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "MyIngress.sketch_row3",
+      "id" : 3,
+      "source_info" : {
+        "filename" : "sketch.p4",
+        "line" : 171,
+        "column" : 30,
+        "source_fragment" : "sketch_row3"
+      },
+      "size" : 65536,
+      "bitwidth" : 32
+    },
+    {
+      "name" : "MyIngress.sketch_report",
+      "id" : 4,
+      "source_info" : {
+        "filename" : "sketch.p4",
+        "line" : 176,
+        "column" : 29,
+        "source_fragment" : "sketch_report"
+      },
+      "size" : 65536,
+      "bitwidth" : 1
+    }
+  ],
+  "calculations" : [
+    {
+      "name" : "calc",
+      "id" : 0,
+      "algo" : "crc32",
+      "input" : [
+        {
+          "type" : "field",
+          "value" : ["scalars", "tmp_5"]
+        },
+        {
+          "type" : "field",
+          "value" : ["scalars", "tmp_6"]
+        },
+        {
+          "type" : "field",
+          "value" : ["scalars", "tmp_7"]
+        },
+        {
+          "type" : "field",
+          "value" : ["scalars", "tmp_8"]
+        },
+        {
+          "type" : "field",
+          "value" : ["scalars", "tmp_9"]
+        }
+      ]
+    },
+    {
+      "name" : "calc_0",
+      "id" : 1,
+      "algo" : "crc32",
+      "input" : [
+        {
+          "type" : "field",
+          "value" : ["scalars", "tmp_10"]
+        },
+        {
+          "type" : "field",
+          "value" : ["scalars", "tmp_11"]
+        },
+        {
+          "type" : "field",
+          "value" : ["scalars", "tmp_12"]
+        },
+        {
+          "type" : "field",
+          "value" : ["scalars", "tmp_13"]
+        },
+        {
+          "type" : "field",
+          "value" : ["scalars", "tmp_14"]
+        },
+        {
+          "type" : "field",
+          "value" : ["scalars", "tmp_15"]
+        }
+      ]
+    },
+    {
+      "name" : "calc_1",
+      "id" : 2,
+      "algo" : "crc32",
+      "input" : [
+        {
+          "type" : "field",
+          "value" : ["scalars", "tmp_27"]
+        },
+        {
+          "type" : "field",
+          "value" : ["scalars", "tmp_28"]
+        },
+        {
+          "type" : "field",
+          "value" : ["scalars", "tmp_29"]
+        },
+        {
+          "type" : "field",
+          "value" : ["scalars", "tmp_30"]
+        },
+        {
+          "type" : "field",
+          "value" : ["scalars", "tmp_31"]
+        }
+      ]
+    }
+  ],
+  "learn_lists" : [],
+  "actions" : [
+    {
+      "name" : "NoAction",
+      "id" : 0,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "MyIngress.mirror_heavy_flow",
+      "id" : 1,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "clone_ingress_pkt_to_egress",
+          "parameters" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x1"
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 179,
+            "column" : 8,
+            "source_fragment" : "clone(CloneType.I2E, 0)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.drop",
+      "id" : 2,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 183,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.drop",
+      "id" : 3,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 183,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.get_thresholds_action",
+      "id" : 4,
+      "runtime_data" : [
+        {
+          "name" : "hh_threshold_param",
+          "bitwidth" : 32
+        },
+        {
+          "name" : "drop_threshold_param",
+          "bitwidth" : 32
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "hh_threshold_0"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 187,
+            "column" : 8,
+            "source_fragment" : "hh_threshold = hh_threshold_param"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "drop_threshold_0"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 1
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 188,
+            "column" : 8,
+            "source_fragment" : "drop_threshold = drop_threshold_param"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.ipv4_forward_action",
+      "id" : 5,
+      "runtime_data" : [
+        {
+          "name" : "port",
+          "bitwidth" : 9
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_spec"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 201,
+            "column" : 8,
+            "source_fragment" : "standard_metadata.egress_spec = port"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "sketch232",
+      "id" : 6,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "srcPort_0"]
+            },
+            {
+              "type" : "field",
+              "value" : ["tcp", "srcPort"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 232,
+            "column" : 16,
+            "source_fragment" : "srcPort = hdr.tcp.srcPort"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "dstPort_0"]
+            },
+            {
+              "type" : "field",
+              "value" : ["tcp", "desPort"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 233,
+            "column" : 16,
+            "source_fragment" : "dstPort = hdr.tcp.desPort"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "sketch236",
+      "id" : 7,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "srcPort_0"]
+            },
+            {
+              "type" : "field",
+              "value" : ["udp", "srcPort"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 236,
+            "column" : 16,
+            "source_fragment" : "srcPort = hdr.udp.srcPort"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "dstPort_0"]
+            },
+            {
+              "type" : "field",
+              "value" : ["udp", "desPort"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 237,
+            "column" : 16,
+            "source_fragment" : "dstPort = hdr.udp.desPort"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "sketch240",
+      "id" : 8,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "srcPort_0"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 240,
+            "column" : 16,
+            "source_fragment" : "srcPort = 0"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "dstPort_0"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 241,
+            "column" : 16,
+            "source_fragment" : "dstPort = 0"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "sketch273",
+      "id" : 9,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "hashTemp1_0"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x00ffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 273,
+            "column" : 42,
+            "source_fragment" : "(bit<32>)index1"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "msgTemp_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.sketch_row1"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 273,
+            "column" : 16,
+            "source_fragment" : "sketch_row1.read(msgTemp, (bit<32>)index1)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_0"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "hashTemp1_0"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x00ffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 274,
+            "column" : 34,
+            "source_fragment" : "(bit<32>)index1"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_1"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "msgTemp_0"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x00000001"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 274,
+            "column" : 51,
+            "source_fragment" : "msgTemp + 1"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.sketch_row1"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_0"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_1"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 274,
+            "column" : 16,
+            "source_fragment" : "sketch_row1.write((bit<32>)index1, msgTemp + 1)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "sketch279",
+      "id" : 10,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_2"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "hashTemp1_0"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x00ffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 279,
+            "column" : 42,
+            "source_fragment" : "(bit<32>)index1"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "msgTemp_1"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.sketch_row0"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_2"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 279,
+            "column" : 16,
+            "source_fragment" : "sketch_row0.read(msgTemp, (bit<32>)index1)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_3"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "hashTemp1_0"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x00ffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 280,
+            "column" : 34,
+            "source_fragment" : "(bit<32>)index1"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_4"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "msgTemp_1"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x00000001"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 280,
+            "column" : 51,
+            "source_fragment" : "msgTemp + 1"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.sketch_row0"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_3"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_4"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 280,
+            "column" : 16,
+            "source_fragment" : "sketch_row0.write((bit<32>)index1, msgTemp + 1)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "sketch247",
+      "id" : 11,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_5"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ipv4", "srcAddr"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 248,
+            "column" : 16,
+            "source_fragment" : "hdr.ipv4.srcAddr"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_6"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ipv4", "dstAddr"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 249,
+            "column" : 16,
+            "source_fragment" : "hdr.ipv4.dstAddr"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_7"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "srcPort_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 250,
+            "column" : 16,
+            "source_fragment" : "srcPort"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_8"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "dstPort_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 251,
+            "column" : 16,
+            "source_fragment" : "dstPort"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_9"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ipv4", "protocol"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 252,
+            "column" : 16,
+            "source_fragment" : "hdr.ipv4.protocol"
+          }
+        },
+        {
+          "op" : "modify_field_with_hash_based_offset",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "hashTemp1_0"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x000000"
+            },
+            {
+              "type" : "calculation",
+              "value" : "calc"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x01ffff"
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 247,
+            "column" : 12,
+            "source_fragment" : "hash(hashTemp1,HashAlgorithm.crc32, (bit<17>)0, { ..."
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "metadata.seed"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000001"
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 255,
+            "column" : 12,
+            "source_fragment" : "meta.seed = 1"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_10"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ipv4", "srcAddr"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 257,
+            "column" : 16,
+            "source_fragment" : "hdr.ipv4.srcAddr"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_11"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ipv4", "dstAddr"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 258,
+            "column" : 16,
+            "source_fragment" : "hdr.ipv4.dstAddr"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_12"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "srcPort_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 259,
+            "column" : 16,
+            "source_fragment" : "srcPort"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_13"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "dstPort_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 260,
+            "column" : 16,
+            "source_fragment" : "dstPort"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_14"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ipv4", "protocol"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 261,
+            "column" : 16,
+            "source_fragment" : "hdr.ipv4.protocol"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_15"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000001"
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 262,
+            "column" : 16,
+            "source_fragment" : "meta.seed"
+          }
+        },
+        {
+          "op" : "modify_field_with_hash_based_offset",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "hashTemp2_0"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x000000"
+            },
+            {
+              "type" : "calculation",
+              "value" : "calc_0"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x01ffff"
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 256,
+            "column" : 12,
+            "source_fragment" : "hash(hashTemp2,HashAlgorithm.crc32, (bit<17>)0, { ..."
+          }
+        }
+      ]
+    },
+    {
+      "name" : "sketch289",
+      "id" : 12,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_16"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "hashTemp2_0"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x00ffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 289,
+            "column" : 42,
+            "source_fragment" : "(bit<32>)index2"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "msgTemp_2"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.sketch_row3"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_16"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 289,
+            "column" : 16,
+            "source_fragment" : "sketch_row3.read(msgTemp, (bit<32>)index2)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_17"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "hashTemp2_0"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x00ffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 290,
+            "column" : 34,
+            "source_fragment" : "(bit<32>)index2"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_18"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "msgTemp_2"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x00000001"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 290,
+            "column" : 51,
+            "source_fragment" : "msgTemp + 1"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.sketch_row3"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_17"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_18"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 290,
+            "column" : 16,
+            "source_fragment" : "sketch_row3.write((bit<32>)index2, msgTemp + 1)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "sketch295",
+      "id" : 13,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_19"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "hashTemp2_0"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x00ffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 295,
+            "column" : 42,
+            "source_fragment" : "(bit<32>)index2"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "msgTemp_3"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.sketch_row2"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_19"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 295,
+            "column" : 16,
+            "source_fragment" : "sketch_row2.read(msgTemp, (bit<32>)index2)"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_20"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "hashTemp2_0"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x00ffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 296,
+            "column" : 34,
+            "source_fragment" : "(bit<32>)index2"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_21"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["scalars", "msgTemp_3"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x00000001"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 296,
+            "column" : 51,
+            "source_fragment" : "msgTemp + 1"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.sketch_row2"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_20"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_21"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 296,
+            "column" : 16,
+            "source_fragment" : "sketch_row2.write((bit<32>)index2, msgTemp + 1)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "sketch304",
+      "id" : 14,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_22"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "hashTemp1_0"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x00ffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 304,
+            "column" : 40,
+            "source_fragment" : "(bit<32>)index1"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "estimate1_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.sketch_row1"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_22"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 304,
+            "column" : 12,
+            "source_fragment" : "sketch_row1.read(estimate1, (bit<32>)index1)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "sketch307",
+      "id" : 15,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_23"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "hashTemp1_0"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x00ffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 307,
+            "column" : 40,
+            "source_fragment" : "(bit<32>)index1"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "estimate1_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.sketch_row0"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_23"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 307,
+            "column" : 12,
+            "source_fragment" : "sketch_row0.read(estimate1, (bit<32>)index1)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "sketch312",
+      "id" : 16,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_24"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "hashTemp2_0"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x00ffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 312,
+            "column" : 40,
+            "source_fragment" : "(bit<32>)index2"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "estimate2_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.sketch_row3"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_24"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 312,
+            "column" : 12,
+            "source_fragment" : "sketch_row3.read(estimate2, (bit<32>)index2)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "sketch315",
+      "id" : 17,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_25"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "&",
+                      "left" : {
+                        "type" : "expression",
+                        "value" : {
+                          "op" : "&",
+                          "left" : {
+                            "type" : "field",
+                            "value" : ["scalars", "hashTemp2_0"]
+                          },
+                          "right" : {
+                            "type" : "hexstr",
+                            "value" : "0x00ffff"
+                          }
+                        }
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0xffff"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 315,
+            "column" : 42,
+            "source_fragment" : "(bit<32>)index2"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "estimate2_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.sketch_row2"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_25"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 315,
+            "column" : 14,
+            "source_fragment" : "sketch_row2.read(estimate2, (bit<32>)index2)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "sketch321",
+      "id" : 18,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "real_number_0"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "estimate1_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 321,
+            "column" : 16,
+            "source_fragment" : "real_number = estimate1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "sketch324",
+      "id" : 19,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "real_number_0"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "estimate2_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 324,
+            "column" : 16,
+            "source_fragment" : "real_number = estimate2"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "sketch350",
+      "id" : 20,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_26"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "hashReport_0"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 350,
+            "column" : 36,
+            "source_fragment" : "(bit<32>)hashReport"
+          }
+        },
+        {
+          "op" : "register_write",
+          "parameters" : [
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.sketch_report"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_26"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x01"
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 350,
+            "column" : 16,
+            "source_fragment" : "sketch_report.write((bit<32>)hashReport, 1)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "sketch335",
+      "id" : 21,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_27"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ipv4", "srcAddr"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 336,
+            "column" : 16,
+            "source_fragment" : "hdr.ipv4.srcAddr"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_28"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ipv4", "dstAddr"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 337,
+            "column" : 16,
+            "source_fragment" : "hdr.ipv4.dstAddr"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_29"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "srcPort_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 338,
+            "column" : 16,
+            "source_fragment" : "srcPort"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_30"]
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "dstPort_0"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 339,
+            "column" : 16,
+            "source_fragment" : "dstPort"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_31"]
+            },
+            {
+              "type" : "field",
+              "value" : ["ipv4", "protocol"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 340,
+            "column" : 16,
+            "source_fragment" : "hdr.ipv4.protocol"
+          }
+        },
+        {
+          "op" : "modify_field_with_hash_based_offset",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "hashReport_0"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0000"
+            },
+            {
+              "type" : "calculation",
+              "value" : "calc_1"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0xffff"
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 335,
+            "column" : 12,
+            "source_fragment" : "hash(hashReport,HashAlgorithm.crc32, (bit<16>)0, { ..."
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_32"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "hashReport_0"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 343,
+            "column" : 44,
+            "source_fragment" : "(bit<32>)hashReport"
+          }
+        },
+        {
+          "op" : "register_read",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "packet_state_0"]
+            },
+            {
+              "type" : "register_array",
+              "value" : "MyIngress.sketch_report"
+            },
+            {
+              "type" : "field",
+              "value" : ["scalars", "tmp_32"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 343,
+            "column" : 12,
+            "source_fragment" : "sketch_report.read(packet_state,(bit<32>)hashReport)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "sketch163",
+      "id" : 22,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "hh_threshold_0"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 163,
+            "column" : 4,
+            "source_fragment" : "bit<32> hh_threshold = 0;"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["scalars", "drop_threshold_0"]
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x00000000"
+            }
+          ],
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 164,
+            "column" : 4,
+            "source_fragment" : "bit<32> drop_threshold = 0;"
+          }
+        }
+      ]
+    }
+  ],
+  "pipelines" : [
+    {
+      "name" : "ingress",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "sketch.p4",
+        "line" : 157,
+        "column" : 8,
+        "source_fragment" : "MyIngress"
+      },
+      "init_table" : "tbl_sketch163",
+      "tables" : [
+        {
+          "name" : "tbl_sketch163",
+          "id" : 0,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 163,
+            "column" : 4,
+            "source_fragment" : "bit<32> hh_threshold = 0; ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [22],
+          "actions" : ["sketch163"],
+          "base_default_next" : "node_3",
+          "next_tables" : {
+            "sketch163" : "node_3"
+          },
+          "default_entry" : {
+            "action_id" : 22,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "MyIngress.get_thresholds",
+          "id" : 1,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 191,
+            "column" : 10,
+            "source_fragment" : "get_thresholds"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [0, 4],
+          "actions" : ["NoAction", "MyIngress.get_thresholds_action"],
+          "base_default_next" : "node_5",
+          "next_tables" : {
+            "NoAction" : "node_5",
+            "MyIngress.get_thresholds_action" : "node_5"
+          },
+          "default_entry" : {
+            "action_id" : 0,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "tbl_sketch232",
+          "id" : 2,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 232,
+            "column" : 24,
+            "source_fragment" : "= hdr.tcp.srcPort; ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [6],
+          "actions" : ["sketch232"],
+          "base_default_next" : "tbl_sketch247",
+          "next_tables" : {
+            "sketch232" : "tbl_sketch247"
+          },
+          "default_entry" : {
+            "action_id" : 6,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_sketch236",
+          "id" : 3,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 236,
+            "column" : 24,
+            "source_fragment" : "= hdr.udp.srcPort; ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [7],
+          "actions" : ["sketch236"],
+          "base_default_next" : "tbl_sketch247",
+          "next_tables" : {
+            "sketch236" : "tbl_sketch247"
+          },
+          "default_entry" : {
+            "action_id" : 7,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_sketch240",
+          "id" : 4,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 240,
+            "column" : 24,
+            "source_fragment" : "= 0; ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [8],
+          "actions" : ["sketch240"],
+          "base_default_next" : "tbl_sketch247",
+          "next_tables" : {
+            "sketch240" : "tbl_sketch247"
+          },
+          "default_entry" : {
+            "action_id" : 8,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_sketch247",
+          "id" : 5,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 247,
+            "column" : 12,
+            "source_fragment" : "hash(hashTemp1,HashAlgorithm.crc32, (bit<17>)0, { ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [11],
+          "actions" : ["sketch247"],
+          "base_default_next" : "node_11",
+          "next_tables" : {
+            "sketch247" : "node_11"
+          },
+          "default_entry" : {
+            "action_id" : 11,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_sketch273",
+          "id" : 6,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 273,
+            "column" : 16,
+            "source_fragment" : "sketch_row1.read(msgTemp, (bit<32>)index1); ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [9],
+          "actions" : ["sketch273"],
+          "base_default_next" : "node_14",
+          "next_tables" : {
+            "sketch273" : "node_14"
+          },
+          "default_entry" : {
+            "action_id" : 9,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_sketch279",
+          "id" : 7,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 279,
+            "column" : 16,
+            "source_fragment" : "sketch_row0.read(msgTemp, (bit<32>)index1); ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [10],
+          "actions" : ["sketch279"],
+          "base_default_next" : "node_14",
+          "next_tables" : {
+            "sketch279" : "node_14"
+          },
+          "default_entry" : {
+            "action_id" : 10,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_sketch289",
+          "id" : 8,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 289,
+            "column" : 16,
+            "source_fragment" : "sketch_row3.read(msgTemp, (bit<32>)index2); ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [12],
+          "actions" : ["sketch289"],
+          "base_default_next" : "node_17",
+          "next_tables" : {
+            "sketch289" : "node_17"
+          },
+          "default_entry" : {
+            "action_id" : 12,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_sketch295",
+          "id" : 9,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 295,
+            "column" : 16,
+            "source_fragment" : "sketch_row2.read(msgTemp, (bit<32>)index2); ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [13],
+          "actions" : ["sketch295"],
+          "base_default_next" : "node_17",
+          "next_tables" : {
+            "sketch295" : "node_17"
+          },
+          "default_entry" : {
+            "action_id" : 13,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_sketch304",
+          "id" : 10,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 304,
+            "column" : 12,
+            "source_fragment" : "sketch_row1.read(estimate1, (bit<32>)index1)"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [14],
+          "actions" : ["sketch304"],
+          "base_default_next" : "node_20",
+          "next_tables" : {
+            "sketch304" : "node_20"
+          },
+          "default_entry" : {
+            "action_id" : 14,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_sketch307",
+          "id" : 11,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 307,
+            "column" : 12,
+            "source_fragment" : "sketch_row0.read(estimate1, (bit<32>)index1)"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [15],
+          "actions" : ["sketch307"],
+          "base_default_next" : "node_20",
+          "next_tables" : {
+            "sketch307" : "node_20"
+          },
+          "default_entry" : {
+            "action_id" : 15,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_sketch312",
+          "id" : 12,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 312,
+            "column" : 12,
+            "source_fragment" : "sketch_row3.read(estimate2, (bit<32>)index2)"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [16],
+          "actions" : ["sketch312"],
+          "base_default_next" : "node_23",
+          "next_tables" : {
+            "sketch312" : "node_23"
+          },
+          "default_entry" : {
+            "action_id" : 16,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_sketch315",
+          "id" : 13,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 315,
+            "column" : 14,
+            "source_fragment" : "sketch_row2.read(estimate2, (bit<32>)index2)"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [17],
+          "actions" : ["sketch315"],
+          "base_default_next" : "node_23",
+          "next_tables" : {
+            "sketch315" : "node_23"
+          },
+          "default_entry" : {
+            "action_id" : 17,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_sketch321",
+          "id" : 14,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 321,
+            "column" : 28,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [18],
+          "actions" : ["sketch321"],
+          "base_default_next" : "tbl_sketch335",
+          "next_tables" : {
+            "sketch321" : "tbl_sketch335"
+          },
+          "default_entry" : {
+            "action_id" : 18,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_sketch324",
+          "id" : 15,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 324,
+            "column" : 28,
+            "source_fragment" : "="
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [19],
+          "actions" : ["sketch324"],
+          "base_default_next" : "tbl_sketch335",
+          "next_tables" : {
+            "sketch324" : "tbl_sketch335"
+          },
+          "default_entry" : {
+            "action_id" : 19,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_sketch335",
+          "id" : 16,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 335,
+            "column" : 12,
+            "source_fragment" : "hash(hashReport,HashAlgorithm.crc32, (bit<16>)0, { ..."
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [21],
+          "actions" : ["sketch335"],
+          "base_default_next" : "node_27",
+          "next_tables" : {
+            "sketch335" : "node_27"
+          },
+          "default_entry" : {
+            "action_id" : 21,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_sketch350",
+          "id" : 17,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 350,
+            "column" : 16,
+            "source_fragment" : "sketch_report.write((bit<32>)hashReport, 1)"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [20],
+          "actions" : ["sketch350"],
+          "base_default_next" : "tbl_mirror_heavy_flow",
+          "next_tables" : {
+            "sketch350" : "tbl_mirror_heavy_flow"
+          },
+          "default_entry" : {
+            "action_id" : 20,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_mirror_heavy_flow",
+          "id" : 18,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 351,
+            "column" : 16,
+            "source_fragment" : "mirror_heavy_flow()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [1],
+          "actions" : ["MyIngress.mirror_heavy_flow"],
+          "base_default_next" : "node_30",
+          "next_tables" : {
+            "MyIngress.mirror_heavy_flow" : "node_30"
+          },
+          "default_entry" : {
+            "action_id" : 1,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_drop",
+          "id" : 19,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 360,
+            "column" : 20,
+            "source_fragment" : "drop()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [3],
+          "actions" : ["MyIngress.drop"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "MyIngress.drop" : null
+          },
+          "default_entry" : {
+            "action_id" : 3,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "MyIngress.ipv4_forward",
+          "id" : 20,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 204,
+            "column" : 10,
+            "source_fragment" : "ipv4_forward"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "hdr.ipv4.dstAddr",
+              "target" : ["ipv4", "dstAddr"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [5, 2],
+          "actions" : ["MyIngress.ipv4_forward_action", "MyIngress.drop"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "MyIngress.ipv4_forward_action" : null,
+            "MyIngress.drop" : null
+          },
+          "default_entry" : {
+            "action_id" : 2,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        }
+      ],
+      "action_profiles" : [],
+      "conditionals" : [
+        {
+          "name" : "node_3",
+          "id" : 0,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 220,
+            "column" : 12,
+            "source_fragment" : "hdr.ipv4.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["ipv4", "$valid$"]
+              }
+            }
+          },
+          "false_next" : null,
+          "true_next" : "MyIngress.get_thresholds"
+        },
+        {
+          "name" : "node_5",
+          "id" : 1,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 231,
+            "column" : 16,
+            "source_fragment" : "hdr.tcp.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["tcp", "$valid$"]
+              }
+            }
+          },
+          "true_next" : "tbl_sketch232",
+          "false_next" : "node_7"
+        },
+        {
+          "name" : "node_7",
+          "id" : 2,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 235,
+            "column" : 20,
+            "source_fragment" : "hdr.udp.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["udp", "$valid$"]
+              }
+            }
+          },
+          "true_next" : "tbl_sketch236",
+          "false_next" : "tbl_sketch240"
+        },
+        {
+          "name" : "node_11",
+          "id" : 3,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 270,
+            "column" : 16,
+            "source_fragment" : "hashTemp1 >= threshold"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : ">=",
+              "left" : {
+                "type" : "field",
+                "value" : ["scalars", "hashTemp1_0"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x010000"
+              }
+            }
+          },
+          "true_next" : "tbl_sketch273",
+          "false_next" : "tbl_sketch279"
+        },
+        {
+          "name" : "node_14",
+          "id" : 4,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 286,
+            "column" : 16,
+            "source_fragment" : "hashTemp2 >= threshold"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : ">=",
+              "left" : {
+                "type" : "field",
+                "value" : ["scalars", "hashTemp2_0"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x010000"
+              }
+            }
+          },
+          "true_next" : "tbl_sketch289",
+          "false_next" : "tbl_sketch295"
+        },
+        {
+          "name" : "node_17",
+          "id" : 5,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 303,
+            "column" : 16,
+            "source_fragment" : "hashTemp1 >= threshold"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : ">=",
+              "left" : {
+                "type" : "field",
+                "value" : ["scalars", "hashTemp1_0"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x010000"
+              }
+            }
+          },
+          "true_next" : "tbl_sketch304",
+          "false_next" : "tbl_sketch307"
+        },
+        {
+          "name" : "node_20",
+          "id" : 6,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 310,
+            "column" : 16,
+            "source_fragment" : "hashTemp2 >= threshold"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : ">=",
+              "left" : {
+                "type" : "field",
+                "value" : ["scalars", "hashTemp2_0"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x010000"
+              }
+            }
+          },
+          "true_next" : "tbl_sketch312",
+          "false_next" : "tbl_sketch315"
+        },
+        {
+          "name" : "node_23",
+          "id" : 7,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 320,
+            "column" : 15,
+            "source_fragment" : "estimate1 < estimate2"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "<",
+              "left" : {
+                "type" : "field",
+                "value" : ["scalars", "estimate1_0"]
+              },
+              "right" : {
+                "type" : "field",
+                "value" : ["scalars", "estimate2_0"]
+              }
+            }
+          },
+          "true_next" : "tbl_sketch321",
+          "false_next" : "tbl_sketch324"
+        },
+        {
+          "name" : "node_27",
+          "id" : 8,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 347,
+            "column" : 15,
+            "source_fragment" : "real_number > hh_threshold && packet_state == 0"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "and",
+              "left" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : ">",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "real_number_0"]
+                  },
+                  "right" : {
+                    "type" : "field",
+                    "value" : ["scalars", "hh_threshold_0"]
+                  }
+                }
+              },
+              "right" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "==",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["scalars", "packet_state_0"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x00"
+                  }
+                }
+              }
+            }
+          },
+          "true_next" : "tbl_sketch350",
+          "false_next" : "node_30"
+        },
+        {
+          "name" : "node_30",
+          "id" : 9,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 358,
+            "column" : 15,
+            "source_fragment" : "hdr.udp.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["udp", "$valid$"]
+              }
+            }
+          },
+          "true_next" : "node_31",
+          "false_next" : "MyIngress.ipv4_forward"
+        },
+        {
+          "name" : "node_31",
+          "id" : 10,
+          "source_info" : {
+            "filename" : "sketch.p4",
+            "line" : 359,
+            "column" : 19,
+            "source_fragment" : "real_number > drop_threshold"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : ">",
+              "left" : {
+                "type" : "field",
+                "value" : ["scalars", "real_number_0"]
+              },
+              "right" : {
+                "type" : "field",
+                "value" : ["scalars", "drop_threshold_0"]
+              }
+            }
+          },
+          "true_next" : "tbl_drop",
+          "false_next" : "MyIngress.ipv4_forward"
+        }
+      ]
+    },
+    {
+      "name" : "egress",
+      "id" : 1,
+      "source_info" : {
+        "filename" : "sketch.p4",
+        "line" : 378,
+        "column" : 8,
+        "source_fragment" : "MyEgress"
+      },
+      "init_table" : null,
+      "tables" : [],
+      "action_profiles" : [],
+      "conditionals" : []
+    }
+  ],
+  "checksums" : [],
+  "force_arith" : [],
+  "extern_instances" : [],
+  "field_aliases" : [
+    [
+      "queueing_metadata.enq_timestamp",
+      ["standard_metadata", "enq_timestamp"]
+    ],
+    [
+      "queueing_metadata.enq_qdepth",
+      ["standard_metadata", "enq_qdepth"]
+    ],
+    [
+      "queueing_metadata.deq_timedelta",
+      ["standard_metadata", "deq_timedelta"]
+    ],
+    [
+      "queueing_metadata.deq_qdepth",
+      ["standard_metadata", "deq_qdepth"]
+    ],
+    [
+      "intrinsic_metadata.ingress_global_timestamp",
+      ["standard_metadata", "ingress_global_timestamp"]
+    ],
+    [
+      "intrinsic_metadata.egress_global_timestamp",
+      ["standard_metadata", "egress_global_timestamp"]
+    ],
+    [
+      "intrinsic_metadata.mcast_grp",
+      ["standard_metadata", "mcast_grp"]
+    ],
+    [
+      "intrinsic_metadata.egress_rid",
+      ["standard_metadata", "egress_rid"]
+    ],
+    [
+      "intrinsic_metadata.priority",
+      ["standard_metadata", "priority"]
+    ]
+  ],
+  "program" : "sketch.p4",
+  "__meta__" : {
+    "version" : [2, 23],
+    "compiler" : "https://github.com/p4lang/p4c"
+  }
+}
